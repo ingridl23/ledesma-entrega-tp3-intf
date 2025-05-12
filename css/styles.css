@@ -1,0 +1,534 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Helvetica Neue", Arial, sans-serif;;
+   
+}
+
+
+:root{
+    /* Primary Colors */
+
+    --primary-color: #FFFFCC;
+    --secondary-color: #FFF000;
+    --tertiaryty-color: #FF3300;
+    --quaternary-color: #0099FF;
+    --tamanio-letra :1rem;
+    --tamanio-letratitulo :1.5rem;
+
+    --titulos1 : h1{
+        font-size: 2 em;
+        color: white;
+        text-align: center;
+        margin-bottom: 5 rem;
+        building: 2px solid white;
+    };
+
+
+    --titulos2 : h2{
+        font-size: 1.3 em;
+        color: blue;
+        text-align: center;
+        margin-bottom: 5 rem;
+    }
+}
+
+body{
+    background-color: var(--quaternary-color);
+}
+
+
+.submit{
+    background-color: rgb(108, 142, 233);
+    opacity: 2;
+    border-radius: 1.3rem ;
+    border: #ccc solid 0.2rem;
+    color: var(--primary-color);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.submit:hover{
+    background-color: rgb(131, 241, 131);
+    
+    
+    transform: scale(1.2);
+    transition: transform  3.5s ease;
+
+    border: var(--secondary-color) solid 0.2rem;
+}
+
+
+
+
+.parent{
+    display:grid;
+    grid-template-areas:
+     "logo logo  "
+     "seccionimg seccionimg"
+     "secciontext secciontext "
+     "form form "
+     "foot foot ";
+
+       grid-template-columns: 1fr 1fr;
+      /* grid-template-rows: 10em 20em 10em;*/
+
+}
+
+.parent.container-header-nav{
+    grid-area: logo;
+
+}
+
+
+.parent .seccionimg{
+    grid-area: seccionimg;
+}
+
+.parent .secciontext{
+    grid-area: secciontext;
+}
+
+.parent form{
+    grid-area: form;
+}
+
+.parent footer{
+    grid-area: foot;
+}
+
+
+
+
+
+.container-head-nav{
+    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-color);
+  border-top: var(--quaternary-color) solid 0.5rem;
+  border-bottom: var(--quaternary-color) solid 0.5rem;
+  height: 10rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 0 2rem; /* Espaciado interno opcional */
+
+
+}
+
+
+
+
+
+.menu{
+  display: flex;
+  
+justify-content: space-between;
+   align-items: center;
+   
+    flex-direction: row-reverse;
+    padding: 1rem;
+
+
+   
+
+    
+  
+}
+
+.menu ul{
+    display: flex;
+  
+
+}
+
+
+.menu ul li {
+  list-style: none;
+  border-radius: 1.4rem;
+  transition: transform 0.3s ease; /* Transición suave */
+   
+}
+
+/* Estilo base del enlace */
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  font-size: var(--tamanio-letratitulo);
+  display: block; /* Hace que el link ocupe todo el área del li */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover sobre el li que afecta al a */
+.menu ul li:hover a {
+  color: rgb(119, 67, 240);
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+  opacity: 1;
+  border-radius: 1.4rem;
+}
+
+
+
+.seccionimg{
+    
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.seccionimg img{
+    width: 100%;
+  height: 40rem;       /* Mantiene la proporción */
+  object-fit: cover;  /* Ajusta sin deformar, puede recortar un poco */
+  display: block;     /* Elimina espacios blancos abajo */
+}
+
+/* Ocultar botón en desktop */
+.btn_menu {
+  display: none;
+
+
+}
+
+
+
+/* Estilo base del menú */
+.lista-container-nav {
+  display: flex;
+  width: 100%; /* Asegura que el menú ocupe todo el ancho disponible */
+  justify-content: space-between; /* Para que los elementos de menú estén bien distribuidos */
+}
+
+
+.secciontext{
+    display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 4rem;
+
+  
+  padding: 0;
+
+  background-color: rgba(72, 110, 214, 0.5); /* reemplazá var(--primary-color) por el color real con alpha */
+  border-radius: 1.4rem;
+ 
+}
+
+
+.secciontext h1{
+    font-size: var(--tamanio-letratitulo);
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+     margin: 2.5rem 0;
+    
+    
+}
+
+.secciontext p{
+    font-size: var(--tamanio-letra);
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    padding: 0 2rem;
+    margin: 5rem 0;
+    
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+    padding: 0;
+    background-color: rgba(72, 110, 214, 0.5); /* reemplazá var(--primary-color) por el color real con alpha */
+    border-radius: 1.4rem;
+}
+
+.form h2{
+    font-size: var(--tamanio-letratitulo);
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+     margin: 2.5rem 0;
+}
+
+.form .container-form-datos-titulos{
+    display: flex;
+    flex-direction: row;
+   
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    padding: 0;
+ justify-content: flex-start;
+}
+
+.form-subtitulos{
+    text-align: center;
+    margin-bottom: 1.2rem;
+    margin-top:1.5rem;
+ margin-left: 1.5rem;
+    color: white;
+
+}
+
+.icono-subtitulos{
+    margin-left: 1rem;
+    background-color: #ccc; border-radius: 50%; padding: 1px ;width:30px;
+}
+
+
+
+.form-titulo-datos{
+    color: aqua;
+}
+
+/* Contenedor que posiciona el label correctamente */
+.field-group {
+  position: relative;
+  margin-bottom: 4.2rem;
+  margin-top: 2rem;
+
+}
+
+/* INPUT Y TEXTAREA con diseño minimalista */
+
+input{
+    margin-bottom: 0.5rem;
+}
+input,
+textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  width: 100%;
+  padding: 0.8rem 0.5rem 0.3rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* LABEL con animación flotante */
+.field-group label {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.8rem;
+  color: white;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+/* Si el input tiene foco o contenido, anima el label hacia arriba */
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+  top: -0.9rem;
+  font-size: 0.75rem;
+  color: #f0f0f0;
+}
+
+
+
+
+
+
+/* Bandera redondeada como botón */
+.img-paises {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 2rem;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.img-paises img {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.img-paises:hover {
+  background-color: var(--primary-color);
+  color: rgb(190, 53, 245);
+}
+
+input.oculto {
+  display: none;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  justify-content: space-between;
+    background: linear-gradient(to bottom,#0099FF,  #e6de6e);
+    padding: 5rem;
+    color: #f0f0f0;
+    
+}
+
+ol a{
+   
+
+    margin-left: 2rem;
+}
+
+
+footer .redes :hover {
+   
+    transform: scale(1.3);
+    transition: transform 2.1s ease;
+
+    
+}
+
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .btn_menu {
+    display: block;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  /* Hover del botón en móviles */
+  .btn_menu:hover {
+    color: var(--tertiaryty-color);/* Cambiar color cuando se pasa el mouse */
+    transform: scale(1.3); /* Efecto de aumentar tamaño */
+  }
+
+
+  
+
+
+
+  .lista-container-nav {
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    
+
+    transition: max-height 0.4s ease;
+    position: absolute;
+    top: 8rem; /* Asegura que no se sobreponga al logo */
+  }
+
+  .lista-container-nav.show {
+    max-height: 100rem; 
+    width: 100%;
+    align-items: center;
+   justify-content: center;
+    left: 0;
+  
+  }
+
+  /* Asegurar que el logo se alinee a la izquierda o centrado */
+  .container-head-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .header-container-img {
+    flex-grow: 1;
+    max-width: 50%; /* Asegura que el logo no sea muy grande */
+  
+  }
+
+
+  .menu ul li {
+    margin: 1rem 0; /* Asegura que los enlaces no estén pegados entre sí */
+    min-width: auto;
+    min-height: auto;
+   
+  }
+
+  /* Asegurarse de que el texto del menú no se sobreponga */
+  .menu ul li a {
+    font-size: 1rem; /* Puedes ajustar esto según el tamaño que prefieras */
+    text-align: center;
+  }
+
+  .header-container-img{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .seccionimg img{
+    width: auto;
+    height: 26rem;
+    object-fit: cover;
+    display: block;
+  }
+
+.img-paises {
+    display: inline-block;
+    margin: 0.3rem;
+    font-size: 0.9rem;
+  }
+
+  .img-paises img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .submit {
+   
+    font-size: 1rem;
+  }
+
+  .form-subtitulos{
+
+    font-size: 0.8rem;
+   text-align: center;
+
+  }
+
+  
+input{
+    margin-bottom: 1.2rem;
+}
+
+
+}
+
+
