@@ -432,16 +432,17 @@ ol a {
 }
 
 footer .redes {
-    display: flex;
+     display: flex;
     flex-direction: row;
     gap: 1.5rem;
+   
+}
+footer .redes img{
+    transition: transform 0.3s ease;
 }
 
-footer .redes a {
-    transition: transform 2.1s ease;
-}
 
-footer .redes a:hover {
+footer .redes a:hover img{
     transform: scale(1.3);
 }
 
@@ -540,11 +541,12 @@ footer .redes a:hover {
     }
     input {
         margin-bottom: 1.2rem;
+      
     }
-    footer .redes a {
+    footer .redes a img {
         display: flex;
         flex-direction: column;
         /* default para mobile */
-        gap: 1rem;
+        margin-left: 2rem;
     }
 }
