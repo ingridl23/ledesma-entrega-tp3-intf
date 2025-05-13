@@ -14,7 +14,7 @@
 
 ## Descripción
 
-Este proyecto consiste en el desarrollo de un formulario de contacto para una empresa, permitiendo a potenciales clientes realizar consultas comerciales de manera efectiva. El formulario incluye campos esenciales y validaciones para garantizar una comunicación eficiente.
+Este proyecto consiste en la simulacion de desarrollo de un formulario de contacto para la empresa de Arcor Argentina.Permitiendo a potenciales clientes realizar consultas comerciales de manera efectiva. El formulario incluye campos esenciales y validaciones para garantizar una comunicación eficiente.
 
 ---
 
@@ -35,17 +35,20 @@ Este proyecto consiste en el desarrollo de un formulario de contacto para una em
 
 ### Validaciones:
 
-- El usuario debe completar al menos uno de los campos: **teléfono** o **email**.  
-- El campo **mensaje** es obligatorio.
+- El usuario debe completar al menos los campos: **teléfono** o **email**.  
+- El campo **mensaje** es obligatorio. Esto se controla desde js analizando las entradas cuando  el usuario intente enviar el formulario sin haber completado los campos requeridos.
+
+- Se implementa a nivel codigo un input oculto como forma de prevencion ante posibles bots (técnica conocida como honeypot). Para esto se valida que este campo esté vacío al momento de enviar el formulario.
 
 ---
 
 ## Estructura del Proyecto
 ├── index.html
+|__ codigoAyuda.html
 ├── css/
 │ └── styles.css
 ├── js/
-│ └── script.js
+│ └── logica.js
 ├── images/
 │ └── [imágenes relacionadas]
 └── README.md
@@ -69,13 +72,19 @@ Se colocaron los campos en una única columna vertical para facilitar su lectura
 
 Las etiquetas de los campos se posicionan sobre los inputs y se animan hacia arriba al enfocar o escribir. Esto mantiene el diseño limpio sin perder información contextual.
 
+El botón de envío del formulario realiza una animación clara y comprensible para el usuario, brindando así una experiencia de calidad durante la navegación por el sitio. (animaciones de tilde si el envio fue exitoso o cruz si falto completar campos requeridos).
+
+Tambien presentan animaciones la seccion de navegacion y logo de las redes sociales en el footer  del sitio.
+
+
+
 ### Feedback visual
 
 Se utilizaron colores y bordes sutiles para indicar foco o errores, mejorando la interacción sin distraer al usuario.
 
 ### Colores y tipografía
 
-- **Paleta de colores:** combinación de colores neutros y sobrios que reflejan profesionalismo, con detalles destacados para llamados a la acción.  
+- **Paleta de colores:** combinación de colores  que reflejan profesionalismo e identidad de la empresa, con detalles destacados para llamados a la acción.  
 - **Tipografía:** fuente sans-serif moderna y legible, adecuada para todo tipo de pantallas.
 
 ---
